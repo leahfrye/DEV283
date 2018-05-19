@@ -13,7 +13,7 @@ let mergedData = [];
 const numObjects = customerData.length;
 let numObjectsAtATime;
 
-const defaultNumObjectsAtATime = Math.ceil(numObjects.length/10);
+const defaultNumObjectsAtATime = Math.ceil(numObjects/10);
 
 // If number of objects at a time is missing or invalid, set a default value.
 if (!process.argv[2] || process.argv[2] <= 0 || process.argv[2] > numObjects) {
@@ -40,7 +40,7 @@ mongodb.MongoClient.connect(url, {useNewUrlParser: true}, (error, client) => {
 
     let createTask = (chunkOfData, i, numQueries) => {
         return (callback) => {
-            db.collection("accounts").insertMany(chunkOfData, (error, results) => {
+            db.collection("accountstwooo").insertMany(chunkOfData, (error, results) => {
                 if (error) return next(error);
                 console.log(`Added chunk #${i + 1} of ${numQueries} to database`)
             });
