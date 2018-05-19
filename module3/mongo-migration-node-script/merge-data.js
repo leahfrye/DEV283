@@ -1,3 +1,6 @@
+/* This script takes two JSON files, loops though them and merges each object together, then adds the 
+merged data to the database. */
+
 const mongodb = require("mongodb");
 const async = require("async");
 const path = require("path");
